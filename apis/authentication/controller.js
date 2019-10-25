@@ -1,4 +1,4 @@
-import  adminService from './service';
+import * as adminService from '../admins/service';
 async function getList(req, res) {
     try {
         const data = await adminService.getList()
@@ -20,7 +20,7 @@ async function createNewAdmin(req, res) {
       return res.error(e);
     }
   };
-export default {
+export {
     getList,
     createNewAdmin
 }
