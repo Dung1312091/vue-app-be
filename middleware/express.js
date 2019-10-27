@@ -1,6 +1,6 @@
-import {
-    MESSAGE
-} from '../constains/messages';
+import
+MESSAGE
+from '../constains/messages';
 import httpStatus from 'http-status';
 export const middleware = {
     /*
@@ -21,7 +21,8 @@ export const middleware = {
                 });
             };
 
-            let resError = (message = MESSAGE.ERROR_MESSAGE_DEFAULT, status = httpStatus.INTERNAL_SERVER_ERROR) => {
+            let resError = (e, message = MESSAGE.ERROR_MESSAGE_DEFAULT, status = httpStatus.INTERNAL_SERVER_ERROR) => {
+                console.log(e);
                 next({
                     message,
                     status

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r babel-register -r babel-polyfill index.js",
+    "start": "nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,6 +15,7 @@
     "chalk": "^2.4.2",
     "express": "^4.17.1",
     "http-status": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.7"
   },
   "devDependencies": {

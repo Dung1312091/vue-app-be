@@ -1,12 +1,18 @@
 import Log from './libs/log';
 import express from 'express';
 import {
-    admins
+    admins,
+    authentication
 } from "./apis";
+import
+authenticationMiddleware
+from "./middleware/authen"
 //api prefix
 const API_PREFIX = "/api/v1"
 //define router
-const publicRoutes = {};
+const publicRoutes = {
+    authentication
+};
 const authenRoutes = {
     admins
 };
@@ -22,7 +28,7 @@ export default app => {
             Log.success(`${key.toUpperCase()} was inited`);
         }
         for (let key in authenRoutes) {
-            app.use(API_PREFIX, authenRoutes[key](authenRoute));
+            app.use(API_PREFIX, authenticationMiddleware, authenRoutes[key](authenRoute));
             Log.success(`${key.toUpperCase()} was inited`);
         }
         //message

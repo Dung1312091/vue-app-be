@@ -1,12 +1,19 @@
 import Admin from './model';
- function create (admin) {
+
+function create(admin) {
   return Admin.create(admin);
 };
- function getList () {
+
+function getList() {
   return Admin.find({});
+};
+
+function findOneAdmin(param) {
+  return Admin.findOne(param);
 };
 
 export default {
   create,
-  getList
+  getList,
+  findOneAdmin
 }
